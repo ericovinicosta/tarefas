@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/image0_0.png" type="image/png">
+    <title>Gerênciador de Tarefas</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/all.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="app">
+        <main class="app__main">
+            <header class="app__main_header">
+                <figure class="app__logo-figure">
+                    <img class="app__logo-imagem" src="./assets/images/image0_0.png"
+                         alt="imagem de uma gerenciadora de tarefas">
+                </figure>
+            </header>
+        </main>
+        <div class="app__form app__form_grid" >
+            <div class="app__form_titulo">Agendador de Tarefas</div>
+            <form class="app__form_add_tasks hidden">
+                <label class="app__form_label form-label">
+                    Nome da Tarefa
+                    <input id="name_task" name="name_task" type="text" class="form-text app__form_text" placeholder="Digite um nome para tarefa"
+                           required>
+                </label>
+                <label class="app__form_label form-label">
+                    Descrição
+                    <textarea id="task" name="task" class="app__form_textarea form-text" rows="3" required
+                              placeholder="Digite aqui a descrição da sua tarefa" ></textarea>
+                </label>
+                <label class="app__form_label form-label">
+                    Classificação
+                    <select id="class_task" class="app__form_select form-select" required>
+                        <optgroup label="Classificação">
+                            <option value="Familiar">Familiar</option>
+                            <option value="Profissional">Profissional</option>
+                            <option value="Lazer">Lazer</option>
+                        </optgroup>
+                    </select>
+                </label>
+                <label class="app__form_label form-label">
+                    Prazo
+                    <input id="date_task" type="datetime-local" class="form-text app__form_text" required>
+                </label>
+                <label class="app__form_label form-label">
+                    Status
+                    <select id="status_task" class="app__form_select form-select" required>
+                        <optgroup label="Status">
+                            <option value="NI">A Fazer</option>
+                            <option value="I">Iniciado</option>
+                            <option value="A">Andamento</option>
+                            <option value="F">Finalizada</option>
+                            <option value="NC">Não Concluída</option>
+                        </optgroup>
+                    </select>
+                </label>
+                <label for="task_color" class="app__form_label form-label">
+                    Selecione uma cor para a Tarefa
+                    <input type="color" name="cores" id="task_color">
+                </label>
+                <div class="app__form_buttons">
+                    <div class="form__buttons">
+                    <input id="btn_save" type="submit" value="Salvar" class="btn btn-primary">
+                    <input id="btn_cancel" type="reset" value="Cancelar" class="btn btn-danger">
+                    </div>
+                </div>
+            </form>
+                <div class="app__form_buttons">
+                    <button id="btn_add" class="btn btn-success" type="submit">Adicionar Tarefa</button>
+                </div>
+        </div>
+    </div>
+    <section id="completed">
+
+    </section>
+    <section id="erased">
+
+    </section>
+    <div class="app__list_tasks">
+
+    </div>
+    <script src="./assets/js/tarefas_crud.js"></script>
+    <script src="./assets/js/all.js"></script>
+</body>
+</html>
