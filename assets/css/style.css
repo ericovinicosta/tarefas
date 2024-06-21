@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root{
@@ -14,7 +15,6 @@
     /*weight de 100 a 900*/
     font-size: 14px;
 }
-
 *,
 *:before,
 *:after{
@@ -23,6 +23,19 @@
     box-sizing: border-box;
     font-family: var(--fonte-principal), sans-serif;
     font-style: normal;
+}
+input:invalid,
+textarea:invalid,
+select:invalid{
+    background-color: hsl(60, 100%, 70%);
+    border-width: 0.25rem;
+    border-color: hsl(0, 100%, 70%);
+}
+input:valid,
+textarea:valid,
+select:valid{
+    background-color: hsl(var(--hue), 65%, 40%);
+    border-color: initial;
 }
 body{
     height: 100vh;
@@ -58,6 +71,39 @@ figure{
 figure.app__logo-imagem{
     width: 80%;
 }
+.app__form_confirma{
+    display: flex;
+    margin-top: 5rem;
+    animation: moveToDownRight 0.9s ease-in-out forwards;
+}
+@keyframes moveToDownRight {
+    0%{
+        transform: translateY(0);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(100px)  translateX(160px);
+        opacity: 1;
+    }
+
+}
+.app__form_confirma > img{
+    position: absolute;
+    width: 31rem;
+    height: 10rem;
+}
+div#mensagem{
+    padding: 2rem;
+    position: absolute;
+    width: 20rem;
+    margin: auto;
+    height: 10rem;
+    display: grid;
+    z-index: 100;
+}
+#mensagem_tarefa{
+    font-weight: 700;
+}
 .app__form{
     margin: auto;
 }
@@ -69,21 +115,19 @@ figure.app__logo-imagem{
 }
 .app__form_add_tasks{
     position: sticky;
-    margin-top: -2.5rem;
+    margin-top: -4rem;
     width: 300px;
     margin-bottom:0;
 }
 .app__list_tasks{
     margin-top: 1.5rem;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     flex-direction: row;
     justify-content: space-between;
 }
-.app__list_tasks{
-    /*background-color: hsla(0, 0%, 100%, 0);*/
-    /*border-style: none;*/
-    /*column-gap: 0.75rem;*/
+.app__list_tasks i{
+    font-size: 1.75rem;
 }
 .app__list_tasks_task{
     background-color: hsla(var(--hue), 65%, 95%, 0.65);
@@ -92,11 +136,13 @@ figure.app__logo-imagem{
     padding: 0.5rem;
     border-style: outset;
     width: 100%;
+    height: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 .task_name{
+    align-items: center;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -104,7 +150,7 @@ figure.app__logo-imagem{
 }
 .task_name>span{
     /*background-color: var(--cor-base);*/
-    width: 65%;
+    width: 50%;
     font-weight: bold;
     text-align: center;
 }

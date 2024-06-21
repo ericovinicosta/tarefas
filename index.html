@@ -25,7 +25,7 @@
                 <label class="app__form_label form-label">
                     Nome da Tarefa
                     <input id="name_task" name="name_task" type="text" class="form-text app__form_text" placeholder="Digite um nome para tarefa"
-                           required>
+                           maxlength="14" required>
                 </label>
                 <label class="app__form_label form-label">
                     Descrição
@@ -35,6 +35,7 @@
                 <label class="app__form_label form-label">
                     Classificação
                     <select id="class_task" class="app__form_select form-select" required>
+                        <option value selected>Selecione uma Classificação</option>
                         <optgroup label="Classificação">
                             <option value="Familiar">Familiar</option>
                             <option value="Profissional">Profissional</option>
@@ -43,12 +44,17 @@
                     </select>
                 </label>
                 <label class="app__form_label form-label">
+                    Selecione uma cor para a Tarefa
+                </label>
+                    <input type="color" name="cores" id="task_color">
+                <label class="app__form_label form-label">
                     Prazo
                     <input id="date_task" type="datetime-local" class="form-text app__form_text" required>
                 </label>
                 <label class="app__form_label form-label">
                     Status
                     <select id="status_task" class="app__form_select form-select" required>
+                        <option value selected>Selecione um Status</option>
                         <optgroup label="Status">
                             <option value="NI">A Fazer</option>
                             <option value="I">Iniciado</option>
@@ -57,10 +63,6 @@
                             <option value="NC">Não Concluída</option>
                         </optgroup>
                     </select>
-                </label>
-                <label for="task_color" class="app__form_label form-label">
-                    Selecione uma cor para a Tarefa
-                    <input type="color" name="cores" id="task_color">
                 </label>
                 <div class="app__form_buttons">
                     <div class="form__buttons">
@@ -72,6 +74,16 @@
                 <div class="app__form_buttons">
                     <button id="btn_add" class="btn btn-success" type="submit">Adicionar Tarefa</button>
                 </div>
+        </div>
+        <div class="app__form_confirma hidden ">
+            <img src="./assets/images/balao_dialogo.png" alt="" class="app__confirmacao">
+            <div id="mensagem">
+                <p>Deseja Realmente apagar a Tarefa <span id="mensagem_tarefa"></span>? </p>
+                <div>
+                    <input id="btn_confirme" class="btn btn-success" type="submit" value="Confirmar">
+                    <input id="btn_cancelar" class="btn btn-danger" type="button" value="Cancelar">
+                </div>
+            </div>
         </div>
     </div>
     <section id="completed">
